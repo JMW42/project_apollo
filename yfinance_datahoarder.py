@@ -51,7 +51,7 @@ def main():
 
         # itterate over individual lines of tickers file 
         for line in file_tickers.readlines():
-            ticker_name = line.replace("\n", "") # get ticker name
+            ticker_name = line.replace("\n", "").split("#")[0].replace(" ", "") # get ticker name
             print(f"< Ticker: {ticker_name}")
             check_create_directory(f"data/{ticker_name}") # check for ticker data directory and create it if needed
 
